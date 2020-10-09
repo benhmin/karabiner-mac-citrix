@@ -1,0 +1,64 @@
+{
+  "title": "Map Option to Option-CMD in Citrix Viewer",
+  "rules": [
+    {
+      "description": "Maps the Option to Option-CMD for use in Citrix",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_option",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_command",
+              "modifiers": [
+                "left_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.citrix.XenAppViewer"
+              ]
+            }
+          ]
+        },
+                {
+          "type": "basic",
+          "from": {
+            "key_code": "right_option",
+            "modifiers": {
+              "optional": [
+                "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_command",
+              "modifiers": [
+                "left_option"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "com.citrix.XenAppViewer"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

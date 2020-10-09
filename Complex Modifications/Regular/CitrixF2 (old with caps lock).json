@@ -1,0 +1,61 @@
+{
+   "title":"F2 Key Modifications",
+   "rules":[
+      {
+         "description":"f2 to f2+cmd only for Citrix Viewer and brightness up all else",
+         "manipulators":[
+            {
+               "type":"basic",
+               "from":{
+                  "key_code":"f2"
+               },
+	       "to":[
+		  {
+		     "key_code":"caps_lock"
+		  }
+	       ],
+               "to_delayed_action":{
+		"to_if_invoked": [
+                  {
+                     "key_code":"f2"
+                  },
+		  {
+		     "key_code":"caps_lock"
+		  }
+               ]},
+               "conditions":[
+                  {
+                     "type":"frontmost_application_if",
+                     "bundle_identifiers":[
+                        "com.citrix.XenAppViewer"
+                     ]
+                  }
+               ],
+	       "parameters":
+		  {
+		     "basic.to_delayed_action_delay_milliseconds":100
+		  }
+            },
+            {
+               "type":"basic",
+               "from":{
+                  "key_code":"f2"
+               },
+               "to":[
+                  {
+                     "key_code":"display_brightness_increment"
+                  }
+               ],
+               "conditions":[
+                  {
+                     "type":"frontmost_application_unless",
+                     "bundle_identifiers":[
+                        "com.citrix.XenAppViewer"
+                     ]
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

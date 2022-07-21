@@ -1,3 +1,4 @@
+
 # karabiner-mac-citrix
 
 
@@ -15,4 +16,4 @@ The complex modifications need to be placed in the following folder (after insta
 - ~/.config/karabiner/assets/complex_modifications/
 
 
-See the word document in this repo for additional instructions.
+See the [word document](https://github.com/benhmin/karabiner-mac-citrix/blob/main/Epic%20F2%20Mac%20Guide.docx?raw=true) in this repo for additional instructions.

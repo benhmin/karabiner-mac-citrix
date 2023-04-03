@@ -1,0 +1,30 @@
+{
+  "title": "Map F3 to F3 in Citrix Viewer",
+  "rules": [
+    {
+      "description": "Maps the F3 to F3 for use in Citrix. Essentially remaps F3 back to mission control for other apps",
+      "manipulators": [
+        {
+          "type":"basic",
+          "from":{
+            "key_code":"f3"
+          },
+          "to":[
+            {
+                "key_code":"mission_control"
+            }
+          ],
+          "conditions":[
+            {
+                "type":"frontmost_application_unless",
+                "bundle_identifiers":[
+                  "com.citrix.XenAppViewer",
+                  "com.citrix.receiver.icaviewer.mac"
+                ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

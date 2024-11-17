@@ -1,58 +1,24 @@
 {
-  "title": "Map F2 to CMD-F2 in Citrix Viewer",
+"title": "Map F2 to CMD-F2 in Citrix Viewer",
   "rules": [
     {
-      "description": "Maps the F2 to Command-F2 for use in Citrix",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "f2",
-            "modifiers": {
-              "optional": [
-                "any"
-              ]
-            }
-          },
-          "to": [
+        "description": "Maps the F2 to Command-F2 for use in Citrix",
+        "manipulators": [
             {
-              "key_code": "f2",
-              "modifiers": [
-                "left_command"
-              ]
+                "conditions": [
+                    {
+                        "bundle_identifiers": [
+                            "com.citrix.XenAppViewer",
+                            "com.citrix.receiver.icaviewer.mac"
+                        ],
+                        "type": "frontmost_application_unless"
+                    }
+                ],
+                "from": { "key_code": "f2" },
+                "to": [{ "key_code": "display_brightness_increment" }],
+                "type": "basic"
             }
-          ],
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "com.citrix.XenAppViewer",
-                "com.citrix.receiver.icaviewer.mac"
-              ]
-            }
-          ]
-        },
-	{
-               "type":"basic",
-               "from":{
-                  "key_code":"f2"
-               },
-               "to":[
-                  {
-                     "key_code":"display_brightness_increment"
-                  }
-               ],
-               "conditions":[
-                  {
-                     "type":"frontmost_application_unless",
-                     "bundle_identifiers":[
-                        "com.citrix.XenAppViewer",
-                        "com.citrix.receiver.icaviewer.mac"
-                     ]
-                  }
-               ]
-            }
-      ]
+        ]
     }
   ]
 }

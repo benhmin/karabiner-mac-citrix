@@ -1,24 +1,19 @@
 {
-"title": "Map F2 to CMD-F2 in Citrix Viewer",
-  "rules": [
-    {
-        "description": "Maps the F2 to Command-F2 for use in Citrix",
-        "manipulators": [
-            {
-                "conditions": [
-                    {
-                        "bundle_identifiers": [
-                            "com.citrix.XenAppViewer",
-                            "com.citrix.receiver.icaviewer.mac"
-                        ],
-                        "type": "frontmost_application_unless"
-                    }
-                ],
-                "from": { "key_code": "f2" },
-                "to": [{ "key_code": "display_brightness_increment" }],
-                "type": "basic"
-            }
-        ]
-    }
-  ]
+    "description": "Maps the F2 to Command-F2 for use in Citrix",
+    "manipulators": [
+        {
+            "conditions": [
+                {
+                    "bundle_identifiers": [
+                        "com.citrix.XenAppViewer",
+                        "com.citrix.receiver.icaviewer.mac"
+                    ],
+                    "type": "frontmost_application_unless"
+                }
+            ],
+            "from": { "key_code": "f2" },
+            "to": [{ "key_code": "display_brightness_increment" }],
+            "type": "basic"
+        }
+    ]
 }
